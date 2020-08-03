@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<!-- Required meta tags -->
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+		<link href="{{url_for('static', filename='style.css')}}" rel="stylesheet">
+
+		<title>NYU TCR</title>
+	</head>
+	<body>
+		<div class="center">
+			<img src="{{url_for('static', filename='nyu.jpg')}}" alt="NYU Logo">
+			<h1>Submit the CSV File Below</h1>
+			{% for message in get_flashed_messages() %} 
+			<div class="alert center">
+					{{ message }}
+			</div>
+			{% endfor %}
+			<form method="POST" enctype='multipart/form-data'>
+				{{ form.csrf_token }}
+				{{ form.file() }}
+				{{ form.submit() }}
+			</form>
+		</div>
+	</body>
+</html>
