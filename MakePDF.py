@@ -97,7 +97,7 @@ def write_concern_6(data, flowables, styles):
         flowables.append(create_table(column_names, list(d.values())))
         flowables.append(PageBreak())
 
-
+# @brief writes a pdf to the /tmp directory to be able to write and send through google app engine
 def write_entire_pdf(data):
     outfilename = "analysis.pdf"
     outfiledir = '/tmp'

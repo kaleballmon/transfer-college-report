@@ -1,18 +1,17 @@
 import pandas as pd
 import AnalyzeModule
 
+# Dictionary Index:
+# 1 = Student Number Breakdown (a for total; b for met)
+# 2 = Country Breakdown (a for total; b for met)
+# 3 = Admissions Breakdown (a for total; b for met)
+# 4 = School Breakdown (a for total; b for met)
+# 5 = Census Breakdown (a for total; b for met)
+# 6 = Reasons Breakdown( a for total; b for domestic; c for international)
+# 7 = Indcated codes Breakdown(a for stayed; b for left)
+# 8 = Census and meeting analysis (a for met; b for not met)
 
-# 1 Student Number Breakdown (a for total b for met)
-# need total number, domestic number and international number
-# 2 Country Breakdown ( a b )
-# 3 Admissions Breakdown (a b)
-# 4 School Breakdown (a b)
-# 5 Census Breakdown (a b)
-# 6 Reasons ( a total b domestic c international)
-# 7 indcated codes ( a stayed b left)
-# 8 census and meeting analysis (a met b not met)
-
-
+# @brief constructs and returns a dictionary from data pulled from the csv
 def analyze(file):
     output_data = {}
     try:

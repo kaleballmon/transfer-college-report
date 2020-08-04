@@ -34,6 +34,7 @@ def index():
             )
             return redirect(url_for("index"))
         else:
+            # the file analysis.pdf was written to the /tmp directory
             return send_from_directory("/tmp", filename="analysis.pdf", as_attachment=True)
     return render_template("index.html", form=form)
 
